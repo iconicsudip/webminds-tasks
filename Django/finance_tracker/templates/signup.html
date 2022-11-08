@@ -1,0 +1,36 @@
+{% extends 'nav.html' %}
+
+{% block body %}
+<form action="{% url 'signup' %}" method="POST" class="row g-3" style="display: flex;flex-direction: column;align-content: center;justify-content: center;flex-wrap: wrap;">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="col-auto alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{{message}}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+    {% if error %}
+        <div class="col-auto alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>{{error}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {%endif%}
+    {% csrf_token %}
+    <div class="col-auto">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    <div class="col-auto">
+        <label for="inputPassword1" class="form-label">Password</label>
+        <input name="password1" type="password" class="form-control" id="inputPassword1" placeholder="Password">
+    </div>
+    <div class="col-auto">
+        <label for="inputPassword2" class="form-label">Repeat Password</label>
+        <input name="password2" type="password" class="form-control" id="inputPassword2" placeholder="Repeat Password">
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Ok, Let's signup</button>
+    </div>
+</form>
+{% endblock body %}
