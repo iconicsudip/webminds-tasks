@@ -34,6 +34,7 @@ code {
   align-items: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  user-select: none;
 }
 .header_all a{
   text-decoration: none;
@@ -351,13 +352,18 @@ code {
   margin: 0.5rem 0;
 }
 .codepara p{
-  color: black!important;
+  color: #060606!important;
   font-size: 14px!important;
-  font-weight: 480!important;
+  font-weight: 500!important;
   margin: 0!important;
 }
+hr{
+  border: 0.3px solid #e8e8e8;
+  padding: 0;
+  margin: 0;
+}
 .codesection{
-  margin: 2rem;
+  margin: 1.5rem;
   width: 40%;
 }
 .codesection p{
@@ -412,9 +418,10 @@ code {
 .line{
   width: 1.5px;
   background: #cfcbcb;
+  margin: 0 1rem;
 }
 .explainsection{
-  margin: 2rem;
+  margin: 1.5rem;
   width: 40%;
 }
 .explainsection p{
@@ -427,13 +434,16 @@ code {
 @media screen and (max-width: 697.60px) {
   .codesection {
     width: 100%;
+    margin: 2rem;
   }
   .explainsection{
     width: 100%;
+    margin: 2rem;
   }
   .line{
     width: 100%;
     height: 1.5px;
+    margin: 0;
   }
   .code{
     width: auto;
